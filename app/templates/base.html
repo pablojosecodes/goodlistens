@@ -17,16 +17,19 @@
 
     <div class="text-4xl w-full  pt-16 text-white ">
 
-
-
-
-
-
-
-
         <a class="text-white" href="/index">Home</a>
     </div>
-    <hr>
+
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
 
     {% block content %}{% endblock %}
 </body>
