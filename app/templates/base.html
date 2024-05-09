@@ -12,12 +12,18 @@
 
 </head>
 
-<body class="w-full">
+<body class="overscroll-contain  text-white w-full">
     {% include "blocks/header.html" %}
+
+
+    {% if (url_for(request.endpoint) !="/home") %}
 
     <!-- <div class="text-4xl w-full  pt-16 text-white ">
         <a class="text-white" href="/index">Home</a>
     </div> -->
+    <div class="mt-16">
+
+    </div>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     <ul class=flashes>
@@ -27,8 +33,10 @@
     </ul>
     {% endif %}
     {% endwith %}
+    {% endif %}
 
-    <div class="w-full ">
+
+    <div class="overscroll-contain w-full ">
 
         {% block content %}
         {% endblock %}

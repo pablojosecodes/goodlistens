@@ -19,12 +19,28 @@
                         Home
                     </span>
                 </a>
+                {% if not current_user.is_authenticated %}
+
                 <a class="" href="{{ url_for('main.login') }}">
                     <span
                         class="text-[13px] font-light transition-colors duration-300 hover:text-primary/50 text-primary/70">
                         Login
+                       
+
+
                     </span>
                 </a>
+
+                {% else  %}
+
+                <a class="" href="{{ url_for('main.logout') }}">
+                    <span
+                        class="text-[13px] font-light transition-colors duration-300 hover:text-primary/50 text-primary/70">
+                        Logout
+                    </span>
+                </a>
+
+                {% endif %}
                 <a class="" href="{{ url_for('main.recommend') }}">
                     <span
                         class="text-[13px] font-light transition-colors duration-300 hover:text-primary/50 text-primary/70">
