@@ -2,9 +2,13 @@ import flask
 from flask import url_for
 from flask import render_template, flash, redirect
 from app import app
+from app import db
 from app.forms import LoginForm, RecommendForm
 from flask import request, url_for, abort
 
+from flask_login import login_user
+import sqlalchemy as sa
+from app.models import User
 from app.main import bp
 
 @bp.route("/")
@@ -22,6 +26,11 @@ def home():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
+        user = db.session.scalar(sa.select(User).where(User.username == form.username.data))
+        if user is None or user.check_password(form.username.password):
+            flash("Invalid login. Try again.")
+            redirect(url_for("main.login"))
+        login_user(user)
         flash('Login requested for user {}, remember_me={}'.format(
             form.username.data, form.remember_me.data))
         return redirect(url_for('main.index'))

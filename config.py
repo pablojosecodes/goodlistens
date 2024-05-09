@@ -6,6 +6,7 @@ load_dotenv(os.path.join(basedir, '.env'))
 
 
 class Config:
+    TESTING = False
     ADMINS = ['pablosfsanchez@gmail.com']
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'totally-secret'
 
