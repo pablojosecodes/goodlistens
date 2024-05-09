@@ -35,13 +35,3 @@ class LoginForm(FlaskForm):
     about = TextAreaField("About Me")
     remember_me = BooleanField("Remember Me?")
     submit = SubmitField("Sign In")
-
-class RecommendForm(FlaskForm):
-    name = StringField("Podcast Name", validators=[DataRequired()])
-    rssfeed = URLField("RSS Feed URL", validators=[DataRequired()])
-    about = TextAreaField("(Optional) Description")
-    submit = SubmitField("Submit")
-
-class FeedbackForm(FlaskForm):
-    feedback = TextAreaField("Feedback")
-    submit = SubmitField("Submit")
