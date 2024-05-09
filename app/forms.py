@@ -15,3 +15,7 @@ class RecommendForm(FlaskForm):
     rssfeed = URLField("RSS Feed URL", validators=[DataRequired()])
     about = TextAreaField("(Optional) Description")
     submit = SubmitField("Submit")
+
+class FeedbackForm(FlaskForm):
+    feedback = TextAreaField("Feedback")
+    submit = SubmitField("Submit")

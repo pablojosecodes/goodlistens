@@ -1,10 +1,10 @@
 from typing import Optional 
-from app import db
+from app import db, login
 import sqlalchemy as sa
 from sqlalchemy.orm import mapped_column, Mapped
+from flask_login import UserMixin
 
-
-class User(db.Model):
+class User(UserMixin, db.Model):
     id: Mapped[int]  = mapped_column(primary_key=True)
     username: Mapped[str] = mapped_column(sa.String(64), index=True,
                                                 unique=True)
@@ -22,3 +22,7 @@ class Podcast(db.Model):
     image: Mapped[str] = mapped_column(sa.String(200))
     def __repr__(self):
         return '<Podcast {}>'.format(self.name)
+
+@login.user_loader
+def load_user(id):
+    return db.session.get(User, int(id))
