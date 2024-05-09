@@ -3,6 +3,7 @@ from app import db
 import sqlalchemy as sa
 from sqlalchemy.orm import mapped_column, Mapped
 
+
 class User(db.Model):
     id: Mapped[int]  = mapped_column(primary_key=True)
     username: Mapped[str] = mapped_column(sa.String(64), index=True,
@@ -11,7 +12,13 @@ class User(db.Model):
                                              unique=True)
     password_hash: Mapped[Optional[str]] = mapped_column(sa.String(256))
 
+    def __repr__(self):
+        return '<User {}>'.format(self.username)
 
 
 class Podcast(db.Model):
-    id: Mapped[str] = mapped_column(sa.String(20), primary_key=True)
+    id: Mapped[str] = mapped_column(sa.String(20), primary_key=True, unique=True)
+    name: Mapped[str] = mapped_column(sa.String(100))
+    image: Mapped[str] = mapped_column(sa.String(200))
+    def __repr__(self):
+        return '<Podcast {}>'.format(self.name)

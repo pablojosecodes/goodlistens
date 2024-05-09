@@ -12,18 +12,15 @@
 
 </head>
 
-<body>
+<body class="w-full">
     {% include "blocks/header.html" %}
 
-    <div class="text-4xl w-full  pt-16 text-white ">
-
+    <!-- <div class="text-4xl w-full  pt-16 text-white ">
         <a class="text-white" href="/index">Home</a>
-    </div>
-
-
+    </div> -->
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-    <ul>
+    <ul class=flashes>
         {% for message in messages %}
         <li>{{ message }}</li>
         {% endfor %}
@@ -31,7 +28,12 @@
     {% endif %}
     {% endwith %}
 
-    {% block content %}{% endblock %}
+    <div class="w-full ">
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
 </body>
 
 </html>

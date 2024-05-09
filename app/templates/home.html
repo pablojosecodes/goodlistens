@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class=" min-h-[100dvh] text-neutral-100 w-full bg-black flex-1">
+    <div>
+        <div class="relative mb-4 mt-16 aspect-poster overflow-hidden sm:aspect-video min-[1700px]:rounded-b-2xl">
+            <img alt="Sam Harriss- Making Sense" fetchpriority="high" decoding="async" data-nimg="fill"
+                class="object-cover max-sm:hidden"
+                src="https://assets.samharris.org/episodes/images/0ea7880d-10bc-4123-9de6-815e119b1343/c7e3f94adad"
+                style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+            <img alt="Sam Harriss- Making Sense" fetchpriority="high" decoding="async" data-nimg="fill"
+                class="object-cover sm:hidden" src="https://image.tmdb.org/t/p/original/hkxxMIGaiCTmrEArK7J56JTKUlB.jpg"
+                style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+            <div class="absolute bottom-0 left-0 right-0 z-10 h-1/2 bg-gradient-to-t from-black">
+            </div>
+            <div class="absolute bottom-0 left-0 z-40 mx-[1%] flex flex-col gap-2 px-custom py-10">
+                <span class="text-[32px] font-bold leading-9 text-primary/90 line-clamp-1">Sam Harriss- Making
+                    Sense</span>
+                <ul class="flex flex-row">
+                    <li class="flex">
+                        <span class="text-[15px] font-medium text-primary/70">Science Fiction</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-dot text-primary/70">
+                            <circle cx="12.1" cy="12.1" r="1">
+                            </circle>
+                        </svg>
+                    </li>
+                    <li class="flex">
+                        <span class="text-[15px] font-medium text-primary/70">Horror</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-dot text-primary/70">
+                            <circle cx="12.1" cy="12.1" r="1">
+                            </circle>
+                        </svg>
+                    </li>
+                    <li class="flex">
+                        <span class="text-[15px] font-medium text-primary/70">Action</span>
+                    </li>
+                </ul>
+
+
+                <a href="/movie/940721">
+                    <button
+                        class="items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 rounded-md px-6 mt-4 flex w gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-info size-5">
+                            <circle cx="12" cy="12" r="10">
+                            </circle>
+                            <path d="M12 16v-4">
+                            </path>
+                            <path d="M12 8h.01">
+                            </path>
+                        </svg>
+                        More Info
+                    </button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
