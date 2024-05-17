@@ -1,0 +1,26 @@
+<!-- <div>
+    <label>
+        Only Following
+    </label>
+    <input onchange="" class="bg-red-500" type="checkbox" />
+    <label>
+        Update
+    </label>
+    <input onchange="" class="bg-red-500" type="checkbox" />
+
+    Check me
+</div> -->
+
+<form method="GET" action="{{ url_for('main.users') }}">
+    <label>
+        Only Following
+    </label>
+    <input name="following" value="1" type="checkbox" {% if request.args.get('following') %}checked{% endif %} />
+    <!-- <label>
+        Update
+    </label>
+    <input name="update" value="1" type="checkbox" {% if request.args.get('update') %}checked{% endif %} /> -->
+    <button class="text-black" type="submit">Apply Filters</button>
+</form>
+
+
